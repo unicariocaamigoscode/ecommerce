@@ -1,0 +1,18 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+    container_name: $MS_CONTAINER_NAME
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - $MS_PORT:8080 # Mapeamento de porta de aplicacao
+      - $MS_DEBUG_PORT:5005 # Mapeamento de porta de depuração
+    command: "java -jar app.jar"
+
+networks:
+  default:
+    name: ecommerce-network
+    external: true

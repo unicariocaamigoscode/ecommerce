@@ -34,3 +34,7 @@ build/
 
 ##ASDF 
 .tool-versions
+
+##environment
+.env
+
